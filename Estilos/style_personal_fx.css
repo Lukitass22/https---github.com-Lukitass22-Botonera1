@@ -1,0 +1,281 @@
+/* style_personal_fx.css
+   Paleta: fondo oscuro + rojo secundario
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+:root{
+    --negro-principal: #0d0d0d;
+    --negro-contrast: #121212;
+    --rojo: #e02f2f;
+    --rojo-hover: #ff4040;
+    --gris-oscuro: #1a1a1a;
+    --texto: #f0f0f0;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: var(--negro-principal);
+    color: var(--texto);
+}
+
+/* HEADER */
+.header {
+    background: var(--negro-contrast);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    color: var(--rojo);
+    margin: 0;
+    font-size: 20px;
+}
+
+/* BOTÓN VOLVER */
+.back-btn {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+    background: #b30000;
+    border-radius: 8px;
+    transition: transform 0.2s ease, background 0.3s ease;
+    display: inline-block;
+    font-weight: 600;
+}
+
+.back-btn:hover {
+    transform: scale(1.05);
+    background: #e60000;
+}
+
+/* CONTENT */
+.content {
+    padding: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Mensajes */
+.mensaje {
+    margin: 12px 0;
+    padding: 10px 14px;
+    background: rgba(224,47,47,0.08);
+    border-left: 4px solid var(--rojo);
+    color: var(--texto);
+    font-weight: 600;
+    border-radius: 6px;
+}
+
+/* TITULOS */
+h2 {
+    color: var(--rojo);
+    margin: 18px 0 12px 0;
+    font-size: 18px;
+}
+
+/* TABLA */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #333;
+    text-align: left;
+    vertical-align: middle;
+}
+
+th {
+    color: var(--rojo);
+    font-weight: 700;
+}
+
+/* BOTONERA DE FX */
+.fx-botonera {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+    align-items: flex-start;
+}
+
+/* Cada item (botón + opciones) */
+.fx-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 120px; /* coincide con el tamaño del botón visual */
+}
+
+/* BOTÓN CUADRADO */
+.fx-boton {
+    width: 120px;
+    height: 120px;
+    background: var(--rojo);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 700;
+    text-align: center;
+    padding: 10px;
+    transition: transform 0.2s ease, background 0.3s ease, box-shadow 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.1;
+    font-size: 14px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+
+.fx-boton:hover {
+    transform: scale(1.05);
+    background: var(--rojo-hover);
+    box-shadow: 0 8px 16px rgba(224,47,47,0.12);
+}
+
+/* marcar botón activo mientras reproduce */
+.fx-boton.active {
+    outline: 3px solid rgba(224,47,47,0.18);
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(224,47,47,0.16);
+}
+
+/* FORMULARIO DE AGREGAR FX */
+.form-fx {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin-bottom: 24px;
+}
+
+.input-form {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background: var(--negro-contrast);
+    color: var(--texto);
+    font-size: 14px;
+    outline: none;
+    transition: box-shadow .15s;
+}
+
+.input-form:focus {
+    box-shadow: 0 0 8px rgba(224,47,47,0.12);
+}
+
+/* BOTONES DEL FORM */
+.btn-form {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: var(--rojo);
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.btn-form:hover {
+    transform: scale(1.02);
+    background: var(--rojo-hover);
+}
+
+/* INPUT FILE PERSONALIZADO */
+.file-input-container {
+    position: relative;
+    width: 100%;
+    height: 45px;
+}
+
+.file-input-container input[type="file"] {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+.file-input-label {
+    display: block;
+    width: 100%;
+    height: 45px;
+    background: var(--negro-contrast);
+    border-radius: 8px;
+    border: 1px solid var(--rojo);
+    color: #fff;
+    text-align: center;
+    line-height: 45px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.file-input-label:hover {
+    background: #1a1a1a;
+    transform: scale(1.01);
+}
+
+/* OPCIONES (Eliminar, editar) */
+.fx-opciones {
+    margin-top: 4px;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.btn-eliminar {
+    background: #b30000;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.12s ease;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.btn-eliminar:hover {
+    background: var(--rojo-hover);
+    transform: scale(1.03);
+}
+
+/* Link de editar si más adelante lo agregás */
+.btn-editar {
+    background: transparent;
+    color: var(--texto);
+    padding: 6px 8px;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.06);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+/* AUDIO oculto por si lo usás */
+audio {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .fx-boton {
+        width: 100px;
+        height: 100px;
+        font-size: 13px;
+    }
+    .fx-item { width: 100px; }
+    .form-fx { max-width: 100%; }
+    .content { padding: 18px; }
+}
