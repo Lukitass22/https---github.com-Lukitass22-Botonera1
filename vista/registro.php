@@ -1,11 +1,11 @@
 <?php
+ob_start();  // <-- ESTO SOLUCIONA EL PROBLEMA
+
 session_start();
 include_once("../Controlador/conexion.php");
 
-// Si envía el formulario
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-    // Validar campos
     if (empty($_POST["usuario"]) || empty($_POST["contrasenia"]) || empty($_POST["nombre"])) {
         $mensaje = "Completa todos los campos.";
     } else {
@@ -32,21 +32,22 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             if ($stmt->execute()) {
 
-                // Inicia sesión automática
+                // Iniciar sesión automática
                 $_SESSION['usuario'] = $usuario;
 
-                // REDIRECCIÓN INMEDIATA
+                // REDIRECT FUNCIONAL
                 header("Location: inicio.php");
                 exit;
 
             } else {
-                $mensaje = "Error al registrar el usuario.";
+                $mensaje = "Error al registrar usuario.";
             }
         }
     }
 }
-?>
 
+ob_end_flush(); // <-- IMPORTANTE
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>

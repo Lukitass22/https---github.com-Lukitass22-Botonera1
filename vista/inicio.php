@@ -5,8 +5,10 @@ include_once("../Controlador/conexion.php");
 // Verificar si el usuario está logueado
 if (!isset($_SESSION['usuario'])) {
     header("Location: login.php");
-    exit;
+    exit("Acceso denegado. No hay sesión iniciada.");
 }
+
+
 
 $usuario = $_SESSION['usuario'];
 
