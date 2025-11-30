@@ -1,165 +1,208 @@
+/* ==========================
+   🔥 GLASS UI – FX Programas
+   Luces + Blur + Panel futurista
+===========================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+:root{
+    --glass: rgba(255,255,255,0.08);
+    --glass-hover: rgba(255,255,255,0.15);
+    --glass-border: rgba(255,255,255,0.28);
+    --blur: blur(18px);
+
+    --rojo: #ff3b3b;
+    --rojo2: #ff1e1e;
+    --txt: #ffffff;
+}
+
+/* --------- BODY --------- */
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    background: #0d0d0d;
-    color: #f0f0f0;
+    background: linear-gradient(135deg,#050505,#101010,#070707);
+    color: var(--txt);
 }
 
+/* --------- HEADER GLASS --------- */
 .header {
-    background: #121212;
-    padding: 20px;
+    padding: 18px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    backdrop-filter: var(--blur);
+    background: var(--glass);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: 0 0 25px rgba(255,255,255,0.06);
 }
 
 .header h1 {
-    color: #e02f2f;
+    color: var(--rojo);
     margin: 0;
+    font-weight: 700;
+    letter-spacing: 1.2px;
 }
 
+/* --------- BOTÓN VOLVER --------- */
 .back-btn {
-    color: #fff;
+    padding: 8px 18px;
+    border-radius: 10px;
+    background: rgba(255,50,50,.75);
     text-decoration: none;
-    padding: 8px 16px;
-    background: #b30000;
-    border-radius: 8px;
-    transition: transform 0.2s ease, background 0.3s ease;
+    color: white;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+    transition: .28s;
 }
 
 .back-btn:hover {
-    transform: scale(1.05);
-    background: #e60000;
+    transform: scale(1.1);
+    background: var(--rojo2);
+    box-shadow: 0 0 15px rgba(255,20,20,.6);
 }
 
+/* --------- CONTENIDO GLASS --------- */
 .content {
-    padding: 30px;
+    padding: 35px;
+    backdrop-filter: var(--blur);
+    background: var(--glass);
+    border-radius: 14px;
+    max-width: 1100px;
+    margin: 30px auto;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 0 35px rgba(255,255,255,.05);
 }
 
-/* BOTONERA DE FX */
+/* ==============================
+       BOTONERA
+============================== */
 .fx-botonera {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
-    margin-bottom: 20px;
+    gap: 20px;
 }
 
+/* Tarjeta + botón juntos */
 .fx-item {
     position: relative;
-    width: 120px;
-    height: 120px;
+    width: 130px;
+    height: 130px;
 }
 
+/* ------------ BOTONES GLASS FX ------------ */
 .fx-boton {
     width: 100%;
     height: 100%;
-    background: #e02f2f;
+    border-radius: 15px;
+    background: rgba(255,60,60,0.75);
     color: #fff;
     border: none;
-    border-radius: 12px;
     cursor: pointer;
-    font-weight: bold;
-    text-align: center;
-    padding: 10px;
-    transition: transform 0.2s ease, background 0.3s ease;
+    font-weight: 700;
+    font-size: 15px;
+    backdrop-filter: blur(14px);
+    box-shadow: 0 8px 25px rgba(255,0,0,0.25);
+    transition: .25s;
 }
 
 .fx-boton:hover {
-    transform: scale(1.05);
-    background: #ff4040;
+    background: var(--rojo);
+    transform: scale(1.10);
+    box-shadow: 0 0 25px rgba(255,40,40,.6);
 }
 
-/* BOTÓN DE ELIMINAR FX */
-.form-eliminar {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-}
+/* -------- Botón eliminar encima -------- */
+.form-eliminar { position: absolute; top:5px; right:6px; }
 
 .btn-eliminar-fx {
-    background: rgba(255, 0, 0, 0.85);
-    color: white;
-    border: none;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
-    width: 22px;
-    height: 22px;
-    font-size: 14px;
-    font-weight: bold;
+    background: rgba(255,20,20,.9);
+    border: none;
+    color: white;
     cursor: pointer;
-    transition: background 0.2s ease, transform 0.2s ease;
+    font-size: 14px;
+    transition: .25s;
 }
 
 .btn-eliminar-fx:hover {
     background: red;
-    transform: scale(1.15);
+    transform: scale(1.20);
+    box-shadow: 0 0 10px rgba(255,0,0,.6);
 }
 
-/* FORMULARIO DE AGREGAR FX */
+/* ==============================
+         FORMULARIOS
+==============================*/
 .form-fx {
+    margin-top: 25px;
+    max-width: 400px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    max-width: 400px;
+    gap: 12px;
 }
 
 .input-form {
-    width: 100%;
-    padding: 8px;
-    border-radius: 8px;
-    border: none;
-    background: #121212;
-    color: #f0f0f0;
+    background: var(--glass);
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
     font-size: 14px;
+    border: none;
+    backdrop-filter: blur(12px);
+    transition: .25s;
 }
 
+.input-form:focus {
+    box-shadow:0 0 12px rgba(255,0,0,.5);
+}
+
+/* Botón enviar/agregar */
 .btn-form {
+    background: var(--rojo);
+    border-radius: 10px;
     padding: 10px;
     border: none;
-    border-radius: 8px;
-    background: #e02f2f;
-    color: #fff;
-    cursor: pointer;
-    font-weight: bold;
-    transition: transform 0.2s ease, background 0.3s ease;
+    color: white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.25s;
 }
 
 .btn-form:hover {
-    transform: scale(1.05);
-    background: #ff4040;
+    background: var(--rojo2);
+    transform: scale(1.08);
+    box-shadow: 0 0 18px rgba(255,50,50,.6);
 }
 
-/* INPUT FILE PERSONALIZADO */
+/* ==============================
+     FILE INPUT GLASS
+==============================*/
 .file-input-container {
     position: relative;
-    width: 100%;
-    height: 45px;
-}
-
-.file-input-container input[type="file"] {
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    position: absolute;
-    left: 0;
-    top: 0;
-    cursor: pointer;
+    height: 47px;
 }
 
 .file-input-label {
-    display: block;
-    width: 100%;
-    height: 45px;
-    background: #121212;
-    border-radius: 8px;
-    border: 1px solid #e02f2f;
-    color: #fff;
-    text-align: center;
-    line-height: 45px;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    color: white;
+    text-align:center;
+    line-height:47px;
+    border-radius:10px;
+    cursor:pointer;
+    backdrop-filter: blur(14px);
+    transition:.25s;
 }
 
 .file-input-label:hover {
-    background: #1a1a1a;
-    transform: scale(1.02);
+    background: var(--glass-hover);
+    transform: scale(1.03);
+}
+
+.file-input-container input[type="file"]{
+    width:100%;height:100%;opacity:0;
+    position:absolute;cursor:pointer;
 }

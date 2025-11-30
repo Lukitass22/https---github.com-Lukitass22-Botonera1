@@ -1,281 +1,261 @@
-/* style_personal_fx.css
-   Paleta: fondo oscuro + rojo secundario
-*/
+/* ==========================
+   🔥 GLASS UI – PERSONAL FX
+   Paleta: negro + rojo + glass blur
+============================*/
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
 
 :root{
-    --negro-principal: #0d0d0d;
-    --negro-contrast: #121212;
-    --rojo: #e02f2f;
-    --rojo-hover: #ff4040;
-    --gris-oscuro: #1a1a1a;
-    --texto: #f0f0f0;
+    --glass: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.18);
+    --glass-hover: rgba(255, 255, 255, 0.13);
+    --blur: blur(18px);
+    
+    --rojo: #ff4040;
+    --rojo-acc: #ff2424;
+    --text: #ffffff;
 }
 
 * { box-sizing: border-box; }
 
+/* ========== Body base ========== */
 body {
-    margin: 0;
+    background: linear-gradient(130deg,#050505,#121212,#0a0a0a);
     font-family: 'Montserrat', sans-serif;
-    background: var(--negro-principal);
-    color: var(--texto);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
 }
 
-/* HEADER */
+/* ========== HEADER glass ========== */
 .header {
-    background: var(--negro-contrast);
-    padding: 20px;
+    backdrop-filter: var(--blur);
+    background: var(--glass);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 20px 35px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-radius: 0 0 14px 14px;
+    box-shadow: 0 0 30px rgba(255,255,255,0.05);
 }
 
 .header h1 {
-    color: var(--rojo);
     margin: 0;
-    font-size: 20px;
+    font-size: 22px;
+    color: var(--rojo);
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
-/* BOTÓN VOLVER */
+/* Botón Volver */
 .back-btn {
-    color: #fff;
+    background: rgba(255, 80, 80, 0.75);
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: 700;
     text-decoration: none;
-    padding: 8px 16px;
-    background: #b30000;
-    border-radius: 8px;
-    transition: transform 0.2s ease, background 0.3s ease;
-    display: inline-block;
-    font-weight: 600;
+    color: white;
+    backdrop-filter: blur(10px);
+    transition:.25s;
 }
 
 .back-btn:hover {
-    transform: scale(1.05);
-    background: #e60000;
+    background: var(--rojo-acc);
+    box-shadow: 0 0 15px rgba(255,0,0,.4);
+    transform: scale(1.08);
 }
 
-/* CONTENT */
+/* ========== CONTENEDOR ========== */
 .content {
-    padding: 30px;
     max-width: 1100px;
-    margin: 0 auto;
+    margin: 40px auto;
+    padding: 30px;
+    backdrop-filter: var(--blur);
+    background: var(--glass);
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 0 35px rgba(255,255,255,.05);
 }
 
 /* Mensajes */
 .mensaje {
-    margin: 12px 0;
-    padding: 10px 14px;
-    background: rgba(224,47,47,0.08);
-    border-left: 4px solid var(--rojo);
-    color: var(--texto);
+    backdrop-filter: blur(10px);
+    background: rgba(255,60,60,0.10);
+    padding: 12px 16px;
     font-weight: 600;
-    border-radius: 6px;
+    border-radius: 8px;
+    border-left: 4px solid var(--rojo);
 }
 
 /* TITULOS */
 h2 {
+    font-size: 20px;
     color: var(--rojo);
-    margin: 18px 0 12px 0;
-    font-size: 18px;
+    margin-top: 25px;
+    letter-spacing: 1px;
 }
 
-/* TABLA */
+/* ========== TABLAS CON GLASS ========== */
 table {
     width: 100%;
+    margin-top: 18px;
     border-collapse: collapse;
-    margin-bottom: 20px;
-}
-
-th, td {
-    padding: 12px;
-    border-bottom: 1px solid #333;
-    text-align: left;
-    vertical-align: middle;
+    backdrop-filter: var(--blur);
+    background: var(--glass);
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 th {
+    padding: 14px;
     color: var(--rojo);
     font-weight: 700;
+    backdrop-filter: blur(10px);
 }
 
-/* BOTONERA DE FX */
+td {
+    padding: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ========== FX BOTONERA ========== */
 .fx-botonera {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
-    margin-bottom: 20px;
-    align-items: flex-start;
+    gap: 18px;
+    margin-top: 22px;
 }
 
-/* Cada item (botón + opciones) */
+/* Item contenedor */
 .fx-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    width: 120px; /* coincide con el tamaño del botón visual */
+    text-align: center;
+    width: 130px;
 }
 
-/* BOTÓN CUADRADO */
+/* 🔥 Botones efecto GLASS */
 .fx-boton {
-    width: 120px;
-    height: 120px;
-    background: var(--rojo);
-    color: #fff;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: 700;
-    text-align: center;
-    padding: 10px;
-    transition: transform 0.2s ease, background 0.3s ease, box-shadow 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1.1;
-    font-size: 14px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    width: 130px;
+    height: 130px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    
+    background: rgba(255,75,75,0.75);
+    border-radius: 14px;
+    color:white;
+    cursor:pointer;
+    border:none;
+    font-size:15px;
+    font-weight:700;
+    backdrop-filter: blur(12px);
+    box-shadow:0 8px 25px rgba(255,0,0,0.2);
+    transition:.3s;
 }
 
 .fx-boton:hover {
-    transform: scale(1.05);
-    background: var(--rojo-hover);
-    box-shadow: 0 8px 16px rgba(224,47,47,0.12);
+    background: var(--rojo-acc);
+    transform:scale(1.10);
+    box-shadow: 0 0 25px rgba(255,20,20,0.7);
 }
 
-/* marcar botón activo mientras reproduce */
 .fx-boton.active {
-    outline: 3px solid rgba(224,47,47,0.18);
-    transform: scale(1.03);
-    box-shadow: 0 10px 20px rgba(224,47,47,0.16);
+    box-shadow:0 0 30px rgba(255,30,30,.85);
+    transform:scale(1.06);
 }
 
-/* FORMULARIO DE AGREGAR FX */
+/* ========== FORMULARIO ========== */
 .form-fx {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    max-width: 400px;
-    margin-bottom: 24px;
+    gap:14px;
+    margin-top: 25px;
+    max-width:450px;
 }
 
 .input-form {
-    width: 100%;
-    padding: 10px;
-    border-radius: 8px;
-    border: none;
-    background: var(--negro-contrast);
-    color: var(--texto);
-    font-size: 14px;
-    outline: none;
-    transition: box-shadow .15s;
+    background: rgba(255,255,255,.08);
+    border:none;
+    padding:12px;
+    border-radius:10px;
+    color:white;
+    font-size:14px;
+    backdrop-filter:blur(10px);
+    transition:.25s;
 }
 
 .input-form:focus {
-    box-shadow: 0 0 8px rgba(224,47,47,0.12);
+    box-shadow:0 0 12px rgba(255,0,0,.4);
 }
 
-/* BOTONES DEL FORM */
+/* Botones form */
 .btn-form {
-    padding: 10px;
-    border: none;
-    border-radius: 8px;
-    background: var(--rojo);
-    color: #fff;
-    cursor: pointer;
-    font-weight: bold;
-    transition: transform 0.2s ease, background 0.3s ease;
+    background: rgba(255,60,60,.8);
+    border:none;
+    padding:12px;
+    border-radius:10px;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.25s;
 }
 
 .btn-form:hover {
-    transform: scale(1.02);
-    background: var(--rojo-hover);
+    background:red;
+    transform:scale(1.07);
+    box-shadow:0 0 20px rgba(255,0,0,.5);
 }
 
-/* INPUT FILE PERSONALIZADO */
+/* ========= File Input ========== */
 .file-input-container {
     position: relative;
-    width: 100%;
-    height: 45px;
-}
-
-.file-input-container input[type="file"] {
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    position: absolute;
-    left: 0;
-    top: 0;
-    cursor: pointer;
+    height:45px;
 }
 
 .file-input-label {
-    display: block;
-    width: 100%;
-    height: 45px;
-    background: var(--negro-contrast);
-    border-radius: 8px;
-    border: 1px solid var(--rojo);
-    color: #fff;
-    text-align: center;
-    line-height: 45px;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
+    background: var(--glass);
+    border:1px solid var(--glass-border);
+    text-align:center;
+    border-radius:10px;
+    color:white;
+    line-height:45px;
+    backdrop-filter: blur(14px);
+    cursor:pointer;
+    transition:.25s;
 }
 
 .file-input-label:hover {
-    background: #1a1a1a;
-    transform: scale(1.01);
+    background:var(--glass-hover);
+    transform:scale(1.02);
 }
 
-/* OPCIONES (Eliminar, editar) */
-.fx-opciones {
-    margin-top: 4px;
-    display: flex;
-    gap: 6px;
-    align-items: center;
+.file-input-container input[type="file"]{
+    position:absolute;
+    width:100%;
+    height:100%;
+    opacity:0;
+    cursor:pointer;
 }
 
+/* Eliminar */
 .btn-eliminar {
-    background: #b30000;
-    color: #fff;
-    padding: 6px 10px;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: background 0.3s ease, transform 0.12s ease;
-    font-size: 13px;
-    font-weight: 700;
+    background:#e02929;
+    padding:7px 12px;
+    border-radius:8px;
+    color:#fff;
+    font-weight:700;
+    text-decoration:none;
+    transition:.25s;
 }
 
 .btn-eliminar:hover {
-    background: var(--rojo-hover);
-    transform: scale(1.03);
+    background:red;
+    transform:scale(1.09);
 }
 
-/* Link de editar si más adelante lo agregás */
-.btn-editar {
-    background: transparent;
-    color: var(--texto);
-    padding: 6px 8px;
-    border-radius: 6px;
-    border: 1px solid rgba(255,255,255,0.06);
-    text-decoration: none;
-    font-size: 13px;
-}
-
-/* AUDIO oculto por si lo usás */
-audio {
-    display: none;
-}
 
 /* Responsive */
-@media (max-width: 480px) {
-    .fx-boton {
-        width: 100px;
-        height: 100px;
-        font-size: 13px;
-    }
-    .fx-item { width: 100px; }
-    .form-fx { max-width: 100%; }
-    .content { padding: 18px; }
+@media(max-width:480px){
+    .fx-boton{ width:110px;height:110px; }
+    .fx-item{ width:110px; }
 }

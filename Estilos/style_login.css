@@ -1,129 +1,116 @@
-/* Fuente moderna */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+/*==========================
+    LOGIN – Glassmorphism UI
+===========================*/
+
+/* Fuente futurista */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
 
 body {
     margin: 0;
     height: 100vh;
-    background: radial-gradient(circle at top left, #0d0d0d 0%, #050505 100%);
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Montserrat', sans-serif;
-    color: #f0f0f0;
+    overflow: hidden;
+    color: #fff;
 }
 
+/* Efecto Glass principal */
 form {
-    background: rgba(20, 20, 20, 0.95);
-    padding: 40px;
-    border-radius: 16px;
-    width: 320px;
+    width: 350px;
+    padding: 45px;
     text-align: center;
-    transition: 0.3s ease-in-out;
+    background: rgba(255,255,255,0.08);
+    border-radius: 18px;
+    backdrop-filter: blur(18px) saturate(180%);
+    -webkit-backdrop-filter: blur(18px) saturate(180%);
+    border: 1px solid rgba(255,255,255,0.25);
+    box-shadow: 0 0 30px rgba(255,255,255,0.05);
+    animation: fadeIn 1s ease;
 }
 
-
-
+/* Título */
 h2 {
-    color: #e02f2f;
-    margin-bottom: 30px;
+    font-size: 26px;
+    letter-spacing: 2px;
     font-weight: 600;
-    letter-spacing: 1px;
+    color: #ff4d4d;
+    margin-bottom: 25px;
+    text-shadow: 0 0 12px rgba(255, 65, 65, 0.4);
 }
 
-input {
+/* Inputs */
+input, select {
     width: 100%;
-    padding: 12px;
     margin: 12px 0;
+    padding: 12px;
+    border-radius: 8px;
     border: none;
     outline: none;
-    border-radius: 8px;
-    background: #121212;
-    color: #f0f0f0;
+    background: rgba(255,255,255,0.12);
+    color: #fff;
     font-size: 15px;
-    transition: 0.2s;
+    backdrop-filter: blur(10px);
+    transition: 0.3s ease;
 }
 
-input:focus {
-    background: #181818;
-    box-shadow: 0 0 5px #e02f2f;
+input::placeholder { color: #cfcfcf; }
+
+input:focus, select:focus {
+    box-shadow: 0 0 15px rgba(255, 75, 75, 0.6);
+    transform: scale(1.03);
 }
 
+/* Botón */
 button {
     width: 100%;
     padding: 12px;
-    margin-top: 10px;
+    margin-top: 15px;
     border: none;
-    border-radius: 8px;
-  background: #b30000;
+    border-radius: 10px;
+    background: rgba(255, 60, 60, 0.8);
     color: white;
     font-size: 15px;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(12px);
+    transition: 0.25s ease-in-out;
 }
 
 button:hover {
-    background: #ff4040;
-    transform: scale(1.05);
-    box-shadow: 0 0 10px rgba(255, 64, 64, 0.3);
+    background: rgba(255, 0, 0, 1);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+    transform: scale(1.08);
 }
 
-::placeholder {
-    color: #999;
-}
-
-/* Animación sutil al cargar */
+/* Efecto fade */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-form {
-    animation: fadeIn 0.8s ease;
-}
-
+/*** Registro ***/
 .register-link {
-  margin-top: 25px;
-  text-align: center;
-  color: #ccc;
-  font-size: 14px;
-}
-
-.register-link p {
-  margin-bottom: 8px;
-  color: #999;
+    margin-top: 20px;
+    font-size: 14px;
+    opacity: 0.85;
 }
 
 .register-button {
-  display: inline-block;
-  padding: 10px 20px;
-  background: #b30000;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 500;
-  transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: 8px;
+    display: inline-block;
+    padding: 10px 22px;
+    color: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    background: rgba(255, 60, 60, 0.8);
+    transition: .25s;
 }
 
 .register-button:hover {
-  background: #e60000;
-  transform: scale(1.05);
-}
-
-select {
-    width: 100%;
-    padding: 12px;
-    margin: 12px 0;
-    border: none;
-    outline: none;
-    border-radius: 8px;
-    background: #121212;
-    color: #f0f0f0;
-    font-size: 15px;
-    transition: 0.2s;
-}
-
-select:focus {
-    background: #181818;
-    box-shadow: 0 0 5px #e02f2f;
+    background: rgba(255, 0, 0, 1);
+    box-shadow: 0 0 20px rgba(255,0,0,.6);
+    transform: scale(1.07);
 }
