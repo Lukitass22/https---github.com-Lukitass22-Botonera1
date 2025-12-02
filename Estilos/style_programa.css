@@ -136,36 +136,47 @@ body {
 /* ==============================
          FORMULARIOS
 ==============================*/
+/* ==============================
+       FORMULARIOS GLASS
+==============================*/
 .form-fx {
-    margin-top: 25px;
-    max-width: 400px;
+    margin-top: 30px;
+    max-width: 450px;
+    padding: 35px 30px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 15px;
+
+    background: var(--glass);
+    backdrop-filter: var(--blur);
+    border-radius: 14px;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 0 25px rgba(255,255,255,0.06);
 }
 
+/* Inputs iguales al del registro */
 .input-form {
-    background: var(--glass);
+    background: rgba(255,255,255,0.07);
+    padding: 12px;
     border-radius: 10px;
-    padding: 10px;
+    border: 1px solid rgba(255,255,255,0.15);
     color: white;
-    font-size: 14px;
-    border: none;
-    backdrop-filter: blur(12px);
+    font-size: 15px;
     transition: .25s;
 }
 
 .input-form:focus {
-    box-shadow:0 0 12px rgba(255,0,0,.5);
+    background: rgba(255,255,255,0.13);
+    border-color: var(--rojo);
+    box-shadow: 0 0 10px rgba(255,0,0,.55);
 }
 
-/* Botón enviar/agregar */
+/* Botón enviar igual al de registro */
 .btn-form {
     background: var(--rojo);
-    border-radius: 10px;
-    padding: 10px;
+    padding: 12px;
     border: none;
-    color: white;
+    border-radius: 10px;
     font-weight:bold;
     cursor:pointer;
     transition:.25s;
@@ -174,35 +185,43 @@ body {
 .btn-form:hover {
     background: var(--rojo2);
     transform: scale(1.08);
-    box-shadow: 0 0 18px rgba(255,50,50,.6);
+    box-shadow: 0 0 18px rgba(255,50,50,.65);
 }
 
 /* ==============================
-     FILE INPUT GLASS
+     FILE INPUT  (📁 igual estilo)
 ==============================*/
 .file-input-container {
     position: relative;
-    height: 47px;
+    height: 48px;
 }
 
 .file-input-label {
-    background: var(--glass);
-    border: 1px solid var(--glass-border);
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.18);
     color: white;
     text-align:center;
-    line-height:47px;
+    line-height:48px;
     border-radius:10px;
     cursor:pointer;
-    backdrop-filter: blur(14px);
+    backdrop-filter: blur(12px);
+    font-weight:600;
     transition:.25s;
 }
 
 .file-input-label:hover {
-    background: var(--glass-hover);
+    background: rgba(255,255,255,0.14);
     transform: scale(1.03);
+    box-shadow:0 0 10px rgba(255,0,0,.35);
 }
 
+/* INPUT FILE invisible manteniendo el click */
 .file-input-container input[type="file"]{
-    width:100%;height:100%;opacity:0;
-    position:absolute;cursor:pointer;
+    width:100%;
+    height:100%;
+    opacity:0;
+    position:absolute;
+    top:0;
+    left:0;
+    cursor:pointer;
 }

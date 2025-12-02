@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Inter', sans-serif;
+    background: #101018; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CARD GLASS MODERNO */
+.card {
+    width: 380px;
+    padding: 35px 30px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    color: #fff;
+}
+
+/* Título */
+h2 {
+    font-size: 23px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+/* INPUTS */
+input {
+    width: 95%;
+    padding: 12px;
+    margin: 10px 0;
+    background: rgba(255,255,255,0.15);
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    color: #fff;
+    transition: .25s;
+}
+
+input:focus {
+    background: rgba(255,255,255,0.25);
+    box-shadow: 0 0 10px rgba(161, 99, 255, 0.5);
+}
+
+/* BOTÓN */
+button {
+    width: 95%;
+    padding: 12px;
+    background: linear-gradient(135deg, #6A4DFF, #A163FF);
+    border: none;
+    border-radius: 8px;
+    margin-top: 14px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px rgba(161, 99, 255, 0.6);
+}
+
+/* LINK */
+a {
+    display: block;
+    margin-top: 15px;
+    color: #d7c8ff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: .2s;
+}
+
+a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px #b299ff;
+}

@@ -1,116 +1,216 @@
-/*==========================
-    LOGIN – Glassmorphism UI
-===========================*/
-
-/* Fuente futurista */
+/* ===============================
+        FUENTES
+=============================== */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
 
+@font-face {
+    font-family: 'Bicubik Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Bicubik Regular'), url('../fonts/Bicubik.woff') format('woff');
+}
+
+/* ===============================
+        VARIABLES GLOBALES
+=============================== */
+:root{
+    --glass: rgba(255,255,255,0.08);
+    --glass-2: rgba(255,255,255,0.12);
+    --glass-hover: rgba(255,255,255,0.15);
+    --border: rgba(255,255,255,0.18);
+    --blur: blur(18px);
+
+    --morado: #8e44ad;
+    --morado-light: #a96cff;
+
+    --azul: #3498db;
+    --azul-light: #5dade2;
+
+    --txt: #fff;
+    --txt-soft: #cccccc;
+}
+
+/* ===============================
+               BODY
+=============================== */
 body {
     margin: 0;
-    height: 100vh;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    font-family: 'Roboto', sans-serif;
+    background: radial-gradient(135deg, #1a1a1a, #000);
+    color: var(--txt);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    font-family: 'Montserrat', sans-serif;
-    overflow: hidden;
-    color: #fff;
+    min-height: 100vh;
 }
 
-/* Efecto Glass principal */
-form {
-    width: 350px;
-    padding: 45px;
+/* Encabezado */
+.logo {
+    width: 100%;
+    padding: 1% 0;
+    background: linear-gradient(to right, var(--morado), var(--azul));
     text-align: center;
-    background: rgba(255,255,255,0.08);
+}
+
+/* ===============================
+           CONTENEDORES
+=============================== */
+form, .container, .card, .box, .panel {
+    background: var(--glass);
     border-radius: 18px;
-    backdrop-filter: blur(18px) saturate(180%);
-    -webkit-backdrop-filter: blur(18px) saturate(180%);
-    border: 1px solid rgba(255,255,255,0.25);
-    box-shadow: 0 0 30px rgba(255,255,255,0.05);
-    animation: fadeIn 1s ease;
+    padding: 25px;
+    border: 1px solid var(--border);
+    backdrop-filter: var(--blur);
+    width: 30%;
+    min-height: 40%;
+    box-shadow: 0 0 35px rgba(255,255,255,0.05);
+    animation: fadeIn .6s ease;
 }
 
-/* Título */
-h2 {
-    font-size: 26px;
-    letter-spacing: 2px;
+/* Títulos */
+h2, h1, h3 {
+    text-align: center;
+    color: var(--morado-light);
+    font-family: "Montserrat", sans-serif;
     font-weight: 600;
-    color: #ff4d4d;
-    margin-bottom: 25px;
-    text-shadow: 0 0 12px rgba(255, 65, 65, 0.4);
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px rgba(137,50,255,.4);
 }
 
-/* Inputs */
-input, select {
+/* ===============================
+            INPUTS
+=============================== */
+.input-group { margin-bottom: 15px; }
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input,
+select,
+textarea {
     width: 100%;
-    margin: 12px 0;
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
+    padding: 15px;
+    background: var(--glass-2);
+    border: 1px solid #444;
+    border-radius: 40px;
+    color: #fff;
+    font-size: 1em;
     outline: none;
-    background: rgba(255,255,255,0.12);
-    color: #fff;
-    font-size: 15px;
-    backdrop-filter: blur(10px);
-    transition: 0.3s ease;
-}
-
-input::placeholder { color: #cfcfcf; }
-
-input:focus, select:focus {
-    box-shadow: 0 0 15px rgba(255, 75, 75, 0.6);
-    transform: scale(1.03);
-}
-
-/* Botón */
-button {
-    width: 100%;
-    padding: 12px;
-    margin-top: 15px;
-    border: none;
-    border-radius: 10px;
-    background: rgba(255, 60, 60, 0.8);
-    color: white;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    backdrop-filter: blur(12px);
-    transition: 0.25s ease-in-out;
-}
-
-button:hover {
-    background: rgba(255, 0, 0, 1);
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
-    transform: scale(1.08);
-}
-
-/* Efecto fade */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/*** Registro ***/
-.register-link {
-    margin-top: 20px;
-    font-size: 14px;
-    opacity: 0.85;
-}
-
-.register-button {
-    margin-top: 8px;
-    display: inline-block;
-    padding: 10px 22px;
-    color: #fff;
-    border-radius: 10px;
-    text-decoration: none;
-    background: rgba(255, 60, 60, 0.8);
     transition: .25s;
 }
 
-.register-button:hover {
-    background: rgba(255, 0, 0, 1);
-    box-shadow: 0 0 20px rgba(255,0,0,.6);
-    transform: scale(1.07);
+input::placeholder,
+textarea::placeholder {
+    color: var(--txt-soft);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    background: var(--glass-hover);
+    transform: scale(1.03);
+    box-shadow: 0 0 18px rgba(137,50,255,.7);
+}
+
+/* ===============================
+            BOTÓN LOGIN
+=============================== */
+.login-btn, button, .btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 40px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1em;
+    color: #fff;
+    background: linear-gradient(to right, var(--morado), var(--azul));
+    transition: .3s;
+}
+
+.login-btn:hover,
+button:hover,
+.btn:hover {
+    background: linear-gradient(to right, var(--morado-light), var(--azul-light));
+    transform: scale(1.08);
+    box-shadow: 0 0 22px rgba(140,70,255,.7);
+}
+
+/* ===============================
+               ERROR
+=============================== */
+.error-msg {
+    color: #e74c3c;
+    margin-top: 15px;
+    font-size: 0.9em;
+}
+
+/* ===============================
+             TABLAS
+=============================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--glass);
+    border-radius: 12px;
+    overflow: hidden;
+    backdrop-filter: var(--blur);
+}
+
+th {
+    background: var(--morado);
+    color: white;
+    padding: 12px;
+    font-weight: 600;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+tr:hover {
+    background: rgba(255,255,255,0.07);
+}
+
+/* ===============================
+            NAVBAR
+=============================== */
+.navbar {
+    width: 100%;
+    padding: 15px 30px;
+    background: rgba(255,255,255,0.07);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+.navbar a {
+    padding: 10px 18px;
+    background: var(--glass-2);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: .25s;
+    font-weight: 600;
+}
+
+.navbar a:hover {
+    background: var(--morado);
+    box-shadow: 0 0 18px rgba(140,70,255,.7);
+    transform: scale(1.05);
+}
+
+/* ===============================
+           ANIMACIONES
+=============================== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
 }

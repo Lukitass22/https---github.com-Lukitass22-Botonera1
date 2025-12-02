@@ -51,32 +51,30 @@ ob_end_flush(); // <-- IMPORTANTE
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <link rel="stylesheet" href="../Estilos/style_registro.css">
+
     <meta charset="UTF-8">
     <title>Registro</title>
 </head>
 <body>
 
-<h2>Crear usuario</h2>
+<div class="card">
+    <h2>Crear usuario</h2>
 
-<?php if (isset($mensaje)): ?>
-    <p><?php echo $mensaje; ?></p>
-<?php endif; ?>
+    <?php if (isset($mensaje)): ?>
+        <p><?php echo $mensaje; ?></p>
+    <?php endif; ?>
 
-<form action="" method="POST">
-    <label>Nombre completo</label><br>
-    <input type="text" name="nombre" required><br><br>
+    <form action="" method="POST">
+        <input type="text" name="nombre" placeholder="Nombre completo" required><br>
+        <input type="text" name="usuario" placeholder="Usuario" required><br>
+        <input type="password" name="contrasenia" placeholder="Contraseña" required><br>
+        <button type="submit">Registrarse</button>
+    </form>
 
-    <label>Usuario</label><br>
-    <input type="text" name="usuario" required><br><br>
-
-    <label>Contraseña</label><br>
-    <input type="password" name="contrasenia" required><br><br>
-
-    <button type="submit">Registrarse</button>
-</form>
-
-<br>
-<a href="login.php">Volver al login</a>
+    <a href="login.php">Volver al login</a>
+</div>
 
 </body>
+
 </html>
