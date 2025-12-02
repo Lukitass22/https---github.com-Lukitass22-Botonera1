@@ -240,7 +240,6 @@ $asignaciones = $conexion->query("
         </tr>
     <?php endwhile; ?>
 </table>
-
 <h3>Crear nuevo usuario</h3>
 
 <form method="POST" class="form-programa">
