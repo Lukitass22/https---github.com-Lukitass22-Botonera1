@@ -3,13 +3,13 @@
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
 
     :root{
-        --glass: rgba(255, 255, 255, 0.08);
-        --glass-border: rgba(255, 255, 255, 0.18);
-        --glass-hover: rgba(255, 255, 255, 0.13);
+        --glass: rgba(42, 46, 241, 0.08);
+        --glass-border: rgba(0, 13, 190, 0.616);
+        --glass-hover: rgba(14, 11, 199, 0.13);
         --blur: blur(18px);
         
-        --rojo: #ff4040;
-        --rojo-acc: #ff2424;
+        --azul: #4d40ff;
+        --azul-acc: #4d40ff;
         --text: #ffffff;
     }
 
@@ -34,20 +34,20 @@
         justify-content: space-between;
         align-items: center;
         border-radius: 0 0 14px 14px;
-        box-shadow: 0 0 30px rgba(255,255,255,0.05);
+        box-shadow: 0 0 30px rgba(10, 43, 230, 0.05);
     }
 
     .header h1 {
         margin: 0;
         font-size: 22px;
-        color: var(--rojo);
+        color: var(--azul);
         font-weight: 600;
         letter-spacing: 1px;
     }
 
     /* Botón Volver */
     .back-btn {
-        background: rgba(255, 80, 80, 0.75);
+        background: rgba(13, 27, 230, 0.75);
         padding: 10px 18px;
         border-radius: 10px;
         font-weight: 700;
@@ -58,8 +58,8 @@
     }
 
     .back-btn:hover {
-        background: var(--rojo-acc);
-        box-shadow: 0 0 15px rgba(255,0,0,.4);
+        background: var(--azul-acc);
+        box-shadow: 0 0 15px rgba(8, 4, 219, 0.4);
         transform: scale(1.08);
     }
 
@@ -82,13 +82,13 @@
         padding: 12px 16px;
         font-weight: 600;
         border-radius: 8px;
-        border-left: 4px solid var(--rojo);
+        border-left: 4px solid var(--azul);
     }
 
     /* TITULOS */
     h2 {
         font-size: 20px;
-        color: var(--rojo);
+        color: var(--azul);
         margin-top: 25px;
         letter-spacing: 1px;
     }
@@ -106,7 +106,7 @@
 
     th {
         padding: 14px;
-        color: var(--rojo);
+        color: var(--azul);
         font-weight: 700;
         backdrop-filter: blur(10px);
     }
@@ -138,7 +138,7 @@
         justify-content:center;
         align-items:center;
         
-        background: rgba(255,75,75,0.75);
+        background: rgba(37, 13, 255, 0.75);
         border-radius: 14px;
         color:white;
         cursor:pointer;
@@ -146,18 +146,18 @@
         font-size:15px;
         font-weight:700;
         backdrop-filter: blur(12px);
-        box-shadow:0 8px 25px rgba(255,0,0,0.2);
+        box-shadow:0 8px 25px rgba(29, 10, 138, 0.2);
         transition:.3s;
     }
 
     .fx-boton:hover {
-        background: var(--rojo-acc);
+        background: var(--azul-acc);
         transform:scale(1.10);
-        box-shadow: 0 0 25px rgba(255,20,20,0.7);
+        box-shadow: 0 0 25px rgba(5, 19, 224, 0.7);
     }
 
     .fx-boton.active {
-        box-shadow:0 0 30px rgba(255,30,30,.85);
+        box-shadow:0 0 30px rgba(34, 13, 223, 0.85);
         transform:scale(1.06);
     }
 
@@ -171,7 +171,7 @@
     }
 
     .input-form {
-        background: rgba(255,255,255,.08);
+        background: rgba(25, 40, 248, 0.08);
         border:none;
         padding:12px;
         border-radius:10px;
@@ -182,12 +182,12 @@
     }
 
     .input-form:focus {
-        box-shadow:0 0 12px rgba(255,0,0,.4);
+        box-shadow:0 0 12px rgba(55, 0, 255, 0.4);
     }
 
     /* Botones form */
     .btn-form {
-        background: rgba(255,60,60,.8);
+        background: rgba(41, 18, 170, 0.8);
         border:none;
         padding:12px;
         border-radius:10px;
@@ -198,9 +198,9 @@
     }
 
     .btn-form:hover {
-        background:red;
+        background:rgb(24, 21, 218);
         transform:scale(1.07);
-        box-shadow:0 0 20px rgba(255,0,0,.5);
+        box-shadow:0 0 20px rgba(65, 10, 216, 0.5);
     }
 
     /* ========= File Input ========== */
@@ -236,7 +236,7 @@
 
     /* Eliminar */
     .btn-eliminar {
-        background:#e02929;
+        background:#292ce0;
         padding:7px 12px;
         border-radius:8px;
         color:#fff;
@@ -246,7 +246,7 @@
     }
 
     .btn-eliminar:hover {
-        background:red;
+        background:blue;
         transform:scale(1.09);
     }
 
