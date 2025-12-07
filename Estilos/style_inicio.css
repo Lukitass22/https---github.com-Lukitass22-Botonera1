@@ -1,11 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
 
-/* YES = conservé tu estructura
-   SOLO APLICO efect Glass + estilo visual igual al login */
 
 :root{
-    --glass-bg: rgba(255,255,255,0.09);
-    --glass-border: rgba(255,255,255,0.18);
+    --glass-bg: rgba(52, 22, 221, 0.09);
+    --glass-border: rgba(60, 58, 218, 0.18);
     --text: #ffffff;
     --blur: 16px;
     
@@ -24,7 +22,7 @@ body {
 /* HEADER ahora con glass como login */
 .header{
     backdrop-filter: blur(var(--blur)) saturate(180%);
-    background: rgba(255,255,255,0.05);
+    background: rgba(20, 16, 209, 0.05);
     padding:22px 34px;
     display:flex;
     justify-content:space-between;
@@ -62,7 +60,7 @@ body {
 
 /* CONTENIDO */
 .content{padding:35px;}
-h2,h3{text-shadow:0 0 10px rgba(255, 255, 255, 0.3);
+h2,h3{text-shadow:0 0 10px rgba(37, 64, 218, 0.3);
     text-align: center;
     width: 100%;
     display: block;
@@ -74,15 +72,15 @@ h2,h3{text-shadow:0 0 10px rgba(255, 255, 255, 0.3);
 table{
     width:100%;
     border-collapse:collapse;
-    background:rgba(255,255,255,0.05);
+    background:rgba(19, 56, 224, 0.05);
     backdrop-filter:blur(var(--blur));
     border-radius:14px;
     overflow:hidden;
     box-shadow:0 0 35px rgba(139, 77, 255, .35);
 }
-th,td{padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.09);}
+th,td{padding:14px 18px;border-bottom:1px solid rgba(76, 34, 230, 0.09);}
 th{
-    background:rgba(255,255,255,.10);
+    background:rgba(9, 12, 223, 0.1);
     font-weight:700;
     color:#fff;
 }
@@ -102,7 +100,7 @@ tr:nth-child(even){background:rgba(255,255,255,.03);}
 .btn-editar-fx:hover,.btn-personal-fx:hover{
     background:var(--primary);
     transform:scale(1.07);
-    box-shadow:0 0 18px rgba(255,0,0,.7);
+    box-shadow:0 0 18px rgba(29, 13, 248, 0.7);
 }
 .form-programa{
 
@@ -116,9 +114,9 @@ tr:nth-child(even){background:rgba(255,255,255,.03);}
 .input-form,.select-form{
     padding:14px;
     border-radius:14px;
-    background:rgba(255,255,255,.07);
+    background:rgba(26, 58, 238, 0.07);
     color:white;
-    border:1px solid rgba(255,255,255,.12);
+    border:1px solid rgba(55, 43, 223, 0.12);
     transition:.25s;
     backdrop-filter:blur(var(--blur));
      flex-direction: column;    
@@ -129,7 +127,7 @@ tr:nth-child(even){background:rgba(255,255,255,.03);}
 .input-form:focus,.select-form:focus{
     transform:scale(1.04);
     border-color:var(--primary);
-    box-shadow:0 0 14px rgba(255,0,0,.7);
+    box-shadow:0 0 14px rgba(33, 30, 238, 0.7);
     justify-content: center;
 }
 
@@ -152,7 +150,7 @@ tr:nth-child(even){background:rgba(255,255,255,.03);}
 
 /* MENSAJES */
 .mensaje{
-    background:rgba(255,255,255,.08);
+    background:rgba(73, 17, 226, 0.08);
     border-left:4px solid var(--primary);
     border-radius:10px;
     padding:12px 18px;
