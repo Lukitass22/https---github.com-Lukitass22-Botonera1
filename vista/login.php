@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <div class="login-container">
         <h2>Iniciar sesión</h2>
 
-        <a class="link" href="registro.php">Crear cuenta nueva</a>
+    
 
 
         <?php if (!empty($error)) : ?>
